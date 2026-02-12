@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebMCP Demo - Note Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>WebMCP Note Manager</h1>
+    <p class="subtitle">A demo app exposing tools via <code>navigator.modelContext</code> for AI agents</p>
+    <div id="webmcp-status" class="status status--checking">Checking WebMCP support...</div>
+  </header>
+
+  <main>
+    <section class="manual-controls">
+      <h2>Manual Controls</h2>
+      <form id="add-note-form">
+        <input type="text" id="note-title" placeholder="Note title" required>
+        <input type="text" id="note-content" placeholder="Note content" required>
+        <select id="note-tag">
+          <option value="">No tag</option>
+          <option value="idea">Idea</option>
+          <option value="todo">Todo</option>
+          <option value="reference">Reference</option>
+          <option value="important">Important</option>
+        </select>
+        <button type="submit">Add Note</button>
+      </form>
+    </section>
+
+    <section class="notes-section">
+      <div class="notes-header">
+        <h2>Notes <span id="note-count">(0)</span></h2>
+        <input type="text" id="search-input" placeholder="Search notes...">
+      </div>
+      <div id="notes-list" class="notes-list">
+        <p class="empty-state">No notes yet. Add one above or let an AI agent do it via WebMCP!</p>
+      </div>
+    </section>
+
+    <section class="tool-log-section">
+      <h2>WebMCP Tool Call Log</h2>
+      <div id="tool-log" class="tool-log">
+        <p class="empty-state">Tool calls from AI agents will appear here...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>WebMCP Demo &mdash; Exposing <code>add_note</code>, <code>list_notes</code>, <code>search_notes</code>, <code>delete_note</code>, and <code>get_stats</code> as tools.</p>
+    <p>Enable <strong>chrome://flags/#web-mcp</strong> in Chrome 146+ Canary to test natively.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

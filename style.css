@@ -1,0 +1,242 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.subtitle {
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+code {
+  background: #1a1a2e;
+  color: #7c83ff;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Status badge */
+.status {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status--checking { background: #333; color: #aaa; }
+.status--supported { background: #143d1a; color: #4ade80; }
+.status--polyfill { background: #3b2f04; color: #facc15; }
+.status--unsupported { background: #3b1010; color: #f87171; }
+
+/* Layout */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #ccc;
+}
+
+/* Form */
+#add-note-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#add-note-form input[type="text"],
+#add-note-form select {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+#add-note-form button {
+  padding: 0.5rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  background: #7c83ff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#add-note-form button:hover {
+  background: #6366f1;
+}
+
+/* Notes list */
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#search-input {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  width: 200px;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.note-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.note-card .note-body {
+  flex: 1;
+}
+
+.note-card .note-title {
+  font-weight: 600;
+  color: #fff;
+}
+
+.note-card .note-content {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 0.15rem;
+}
+
+.note-card .note-meta {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+.note-tag {
+  font-size: 0.7rem;
+  padding: 0.1em 0.5em;
+  border-radius: 10px;
+  background: #2a2a4a;
+  color: #a5b4fc;
+  margin-left: 0.5rem;
+}
+
+.note-card .delete-btn {
+  background: none;
+  border: 1px solid #333;
+  color: #888;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.note-card .delete-btn:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+.empty-state {
+  color: #555;
+  font-style: italic;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Tool log */
+.tool-log {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  max-height: 250px;
+  overflow-y: auto;
+  font-family: "SF Mono", "Fira Code", monospace;
+  font-size: 0.8rem;
+}
+
+.log-entry {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-time {
+  color: #555;
+}
+
+.log-tool {
+  color: #7c83ff;
+  font-weight: 600;
+}
+
+.log-result {
+  color: #4ade80;
+}
+
+.log-error {
+  color: #f87171;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+footer p + p {
+  margin-top: 0.25rem;
+}
